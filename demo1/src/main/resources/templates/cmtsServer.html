@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Demo1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+          href="../../css/bootstrap.min.css" />
+</head>
+<body>
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Created</th>
+        <th>Summary</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="list,stat : ${cmtsServers}">
+        <td th:text="${stat.count}"></td>
+        <td th:text="${list.dbSrv}"></td>
+        <td th:text="${list.aliasName}"></td>
+        <td th:text="${list.userName}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
